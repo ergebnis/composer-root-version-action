@@ -19,6 +19,7 @@ jobs:
         uses: "actions/checkout@v2.0.0"
 
       - name: "Run GitHub Action when composer.json is not present"
+        continue-on-error: true
         uses: "./"
         with:
           path: ".build/composer-json/present/no"

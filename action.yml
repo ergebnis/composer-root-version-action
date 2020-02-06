@@ -6,7 +6,7 @@ branding:
   icon: "box"
   color: "green"
 
-description: "Sets a `COMPOSER_ROOT_VERSION` environment variable from the value of the branch alias defined in `composer.json`."
+description: "Sets a COMPOSER_ROOT_VERSION environment variable from the value of the branch alias defined in composer.json."
 
 inputs:
   branch:

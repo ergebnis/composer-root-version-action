@@ -77,7 +77,7 @@ jobs:
           path: ".build/composer-json/present/yes/branch-alias/defined/yes"
           branch: "bar"
 
-      - name: "Verify that COMPOSER_ROOT_VERSION environment variable has been set to ${EXPECTED_COMPOSER_ROOT_VERSION}"
+      - name: "Verify that COMPOSER_ROOT_VERSION environment variable has been set"
         if: "always()"
         run: |
           if [[ -z "${COMPOSER_ROOT_VERSION}" ]]; then
@@ -102,7 +102,7 @@ jobs:
         with:
           path: ".build/composer-json/present/yes/branch-alias/defined/yes"
 
-      - name: "Verify that COMPOSER_ROOT_VERSION environment variable has been set to ${EXPECTED_COMPOSER_ROOT_VERSION}"
+      - name: "Verify that COMPOSER_ROOT_VERSION environment variable has been set"
         if: "always()"
         run: |
           if [[ -z "${COMPOSER_ROOT_VERSION}" ]]; then

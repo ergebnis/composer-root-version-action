@@ -6,4 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 
-For a full diff see [`b25b879...master`](https://github.com/ergebnis/composer-root-version-action/compare/b25b879...master).
+For a full diff see [`0.1.0...master`][0.1.0...master].
+
+## [`0.1.0`][0.1.0]
+
+For a full diff see [`b25b879...0.1.0`][b25b879...0.1.0].
+
+[0.1.0]: https://github.com/ergebnis/composer-root-version-action/releases/tag/0.1.0
+
+[b25b879...0.1.0]: https://github.com/ergebnis/composer-root-version-action/compare/b25b879...0.1.0
+[0.1.0...master]: https://github.com/ergebnis/composer-root-version-action/compare/0.1.0...master

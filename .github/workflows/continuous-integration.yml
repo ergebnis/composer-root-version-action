@@ -18,6 +18,20 @@ jobs:
       - name: "Checkout"
         uses: "actions/checkout@v2.0.0"
 
+      - name: "Run GitHub Action when composer.json is not present and path is not specified"
+        continue-on-error: true
+        uses: "./"
+
+      - name: "Verify that COMPOSER_ROOT_VERSION environment variable has not been set"
+        run: |
+          if [[ ! -z "${COMPOSER_ROOT_VERSION}" ]]; then
+            echo "COMPOSER_ROOT_VERSION environment variable has been unexpectedly set to \"${COMPOSER_ROOT_VERSION}\"."
+
+            exit 1
+          fi
+
+          echo "COMPOSER_ROOT_VERSION environment variable has not been set."
+
       - name: "Run GitHub Action when composer.json is not present"
         continue-on-error: true
         uses: "./"

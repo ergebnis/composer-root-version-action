@@ -16,7 +16,7 @@ inputs:
   path:
     description: "Path in which to look for composer.json"
     required: false
-    default: ""
+    default: "."
 
 name: "composer-root-version-action"
 

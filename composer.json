@@ -1,0 +1,7 @@
+{
+  "extra": {
+    "branch-alias": {
+      "dev-bar": "9.0-dev"
+    }
+  }
+}

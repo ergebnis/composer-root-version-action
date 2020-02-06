@@ -1,0 +1,74 @@
+# https://github.com/probot/settings
+
+branches:
+  - name: "master"
+
+    # https://developer.github.com/v3/repos/branches/#remove-branch-protection
+    # https://developer.github.com/v3/repos/branches/#update-branch-protection
+
+    protection:
+      enforce_admins: false
+      required_pull_request_reviews:
+        dismiss_stale_reviews: true
+        require_code_owner_reviews: true
+        required_approving_review_count: 1
+      required_status_checks:
+        contexts:
+          - "Continuous Integration"
+        strict: false
+      restrictions:
+        apps:
+          - "dependabot-preview"
+        teams: []
+        users:
+          - "ergebnis-bot"
+
+# https://developer.github.com/v3/issues/labels/#create-a-label
+# https://developer.github.com/v3/issues/labels/#update-a-label
+
+labels:
+  - name: "bug"
+    color: "#ee0701"
+    description: ""
+
+  - name: "dependency"
+    color: "#0366d6"
+    description: ""
+
+  - name: "enhancement"
+    color: "#0e8a16"
+    description: ""
+
+  - name: "question"
+    color: "#cc317c"
+    description: ""
+
+  - name: "security"
+    color: "#ee0701"
+    description: ""
+
+  - name: "stale"
+    color: "#eeeeee"
+    description: ""
+
+# https://developer.github.com/v3/repos/#edit
+
+repository:
+  allow_merge_commit: true
+  allow_rebase_merge: false
+  allow_squash_merge: false
+  archived: false
+  default_branch: "master"
+  delete_branch_on_merge: true
+  description: ":octocat: + :musical_note: Provides a GitHub Action that sets a COMPOSER_ROOT_VERSION environment variable from the value of the branch alias defined in composer.json."
+  has_downloads: true
+  has_issues: true
+  has_pages: false
+  has_projects: false
+  has_wiki: false
+  name: "composer-root-version-action"
+  private: false
+
+  # https://developer.github.com/v3/repos/branches/#remove-branch-protection
+
+  topics: "composer, root, version, branch-alias"

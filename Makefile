@@ -6,6 +6,7 @@ it: docker ## Runs the docker target
 
 docker: ## Builds, tags, and runs the Docker image
 	docker build --tag ${DOCKER_IMAGE} .
+	-docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest
 	-docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest foo .build/composer-json/present/no
 	docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest foo .build/composer-json/present/yes/branch-alias/defined/no
 	docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest foo .build/composer-json/present/yes/branch-alias/defined/yes

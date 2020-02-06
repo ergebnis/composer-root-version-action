@@ -25,7 +25,6 @@ jobs:
           path: ".build/composer-json/present/no"
 
       - name: "Verify that COMPOSER_ROOT_VERSION environment variable has not been set"
-        if: "always()"
         run: |
           if [[ ! -z "${COMPOSER_ROOT_VERSION}" ]]; then
             echo "COMPOSER_ROOT_VERSION environment variable has been unexpectedly set to \"${COMPOSER_ROOT_VERSION}\"."
@@ -36,13 +35,11 @@ jobs:
           echo "COMPOSER_ROOT_VERSION environment variable has not been set."
 
       - name: "Run GitHub Action when composer.json is present but does not have branch-alias defined"
-        if: "always()"
         uses: "./"
         with:
           path: ".build/composer-json/present/yes/branch-alias/defined/no"
 
       - name: "Verify that COMPOSER_ROOT_VERSION environment variable has not been set"
-        if: "always()"
         run: |
           if [[ ! -z "${COMPOSER_ROOT_VERSION}" ]]; then
             echo "COMPOSER_ROOT_VERSION environment variable has been unexpectedly set to \"${COMPOSER_ROOT_VERSION}\"."
@@ -53,14 +50,12 @@ jobs:
           echo "COMPOSER_ROOT_VERSION environment variable has not been set."
 
       - name: "Run GitHub Action when composer.json is present but does not have specified branch-alias defined"
-        if: "always()"
         uses: "./"
         with:
           path: ".build/composer-json/present/yes/branch-alias/defined/yes"
           branch: "foo"
 
       - name: "Verify that COMPOSER_ROOT_VERSION environment variable has not been set"
-        if: "always()"
         run: |
           if [[ ! -z "${COMPOSER_ROOT_VERSION}" ]]; then
             echo "COMPOSER_ROOT_VERSION environment variable has been unexpectedly set to \"${COMPOSER_ROOT_VERSION}\"."
@@ -71,14 +66,12 @@ jobs:
           echo "COMPOSER_ROOT_VERSION environment variable has not been set."
 
       - name: "Run GitHub Action when composer.json is present and has specified branch-alias defined"
-        if: "always()"
         uses: "./"
         with:
           path: ".build/composer-json/present/yes/branch-alias/defined/yes"
           branch: "bar"
 
       - name: "Verify that COMPOSER_ROOT_VERSION environment variable has been set"
-        if: "always()"
         run: |
           if [[ -z "${COMPOSER_ROOT_VERSION}" ]]; then
             echo "COMPOSER_ROOT_VERSION environment variable has not been set."
@@ -97,13 +90,11 @@ jobs:
           EXPECTED_COMPOSER_ROOT_VERSION: "1.0-dev"
 
       - name: "Run GitHub Action when composer.json is present and has default branch-alias defined"
-        if: "always()"
         uses: "./"
         with:
           path: ".build/composer-json/present/yes/branch-alias/defined/yes"
 
       - name: "Verify that COMPOSER_ROOT_VERSION environment variable has been set"
-        if: "always()"
         run: |
           if [[ -z "${COMPOSER_ROOT_VERSION}" ]]; then
             echo "COMPOSER_ROOT_VERSION environment variable has not been set."

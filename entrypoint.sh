@@ -1,9 +1,9 @@
 #!/bin/sh -l
 
-BRANCH="${1}"
-PATH="${2}"
+BRANCH="${1:-master}"
+PATH="${2:-.}"
 
-PATH_TO_COMPOSER_JSON_FILE="${2}/composer.json"
+PATH_TO_COMPOSER_JSON_FILE="${PATH}/composer.json"
 
 if [[ ! -f "${PATH_TO_COMPOSER_JSON_FILE}" ]]; then
     echo "File \"${PATH_TO_COMPOSER_JSON_FILE}\" does not exist."

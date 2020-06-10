@@ -9,7 +9,7 @@ Provides a GitHub Action that sets a `COMPOSER_ROOT_VERSION` environment variabl
 
 ### Inputs
 
-* `branch` - Optional, name of the branch for which we want to retrieve the branch alias. Defaults to `master`.
+* `branch` - Optional, name of the branch for which we want to retrieve the branch alias. Defaults to `main`.
 * `path` - Optional, path in which to look for `composer.json`. Defaults to `'.'`.
 
 
@@ -20,7 +20,7 @@ on:
   pull_request:
   push:
     branches:
-      - "master"
+      - "main"
 
 jobs:
   continuous-integration:
@@ -33,9 +33,9 @@ jobs:
         uses: "actions/checkout@v2"
 
       - name: "Set COMPOSER_ROOT_VERSION environment variable"
-        uses: "ergebnis/composer-root-version-action@master"
+        uses: "ergebnis/composer-root-version-action@main"
         with:
-          branch: "master"
+          branch: "main"
 
       - name: "Install dependencies with composer"
         run: "composer install --no-interaction --no-progress --no-suggest"
@@ -51,7 +51,7 @@ Please have a look at [`CONTRIBUTING.md`](.github/CONTRIBUTING.md).
 
 ## Code of Conduct
 
-Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/master/CODE_OF_CONDUCT.md).
+Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 

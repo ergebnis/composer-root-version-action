@@ -10,9 +10,9 @@ description: "Sets a COMPOSER_ROOT_VERSION environment variable from the value o
 
 inputs:
   branch:
-    description: "Name of the branch, e.g. \"master\""
+    description: "Name of the branch, e.g. \"main\""
     required: false
-    default: "master"
+    default: "main"
   path:
     description: "Path in which to look for composer.json"
     required: false

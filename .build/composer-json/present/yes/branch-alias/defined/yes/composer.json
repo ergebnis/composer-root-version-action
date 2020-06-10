@@ -2,7 +2,7 @@
   "extra": {
     "branch-alias": {
       "dev-bar": "1.0-dev",
-      "dev-master": "2.0-dev"
+      "dev-main": "2.0-dev"
     }
   }
 }

@@ -1,7 +1,10 @@
 # composer-root-version-action
 
-[![Continuous Integration](https://github.com/ergebnis/composer-root-version-action/workflows/Continuous%20Integration/badge.svg)](https://github.com/ergebnis/composer-root-version-action/actions)
-[![Continuous Deployment](https://github.com/ergebnis/composer-root-version-action/workflows/Continuous%20Deployment/badge.svg)](https://github.com/ergebnis/composer-root-version-action/actions)
+[![Deploy](https://github.com/ergebnis/composer-root-version-action/workflows/Deploy/badge.svg?branch=main)](https://github.com/ergebnis/composer-root-version-action/actions)
+[![Integrate](https://github.com/ergebnis/composer-root-version-action/workflows/Integrate/badge.svg?branch=main)](https://github.com/ergebnis/composer-root-version-action/actions)
+[![Prune](https://github.com/ergebnis/composer-root-version-action/workflows/Prune/badge.svg?branch=main)](https://github.com/ergebnis/composer-root-version-action/actions)
+[![Release](https://github.com/ergebnis/composer-root-version-action/workflows/Release/badge.svg?branch=main)](https://github.com/ergebnis/composer-root-version-action/actions)
+[![Renew](https://github.com/ergebnis/composer-root-version-action/workflows/Renew/badge.svg?branch=main)](https://github.com/ergebnis/composer-root-version-action/actions)
 
 Provides a GitHub Action that sets a `COMPOSER_ROOT_VERSION` environment variable from the value of the branch alias defined in `composer.json`.
 
@@ -12,19 +15,18 @@ Provides a GitHub Action that sets a `COMPOSER_ROOT_VERSION` environment variabl
 * `branch` - Optional, name of the branch for which we want to retrieve the branch alias. Defaults to `main`.
 * `path` - Optional, path in which to look for `composer.json`. Defaults to `'.'`.
 
-
 ```yaml
-name: "Continuous Integration"
+name: "Integrate"
 
 on:
-  pull_request:
+  pull_request: null
   push:
     branches:
       - "main"
 
 jobs:
-  continuous-integration:
-    name: "Continuous Integration"
+  integrate:
+    name: "Integrate"
 
     runs-on: "ubuntu-latest"
 
@@ -58,3 +60,7 @@ Please have a look at [`CODE_OF_CONDUCT.md`](https://github.com/ergebnis/.github
 This package is licensed using the MIT License.
 
 Please have a look at [`LICENSE.md`](LICENSE.md).
+
+## Curious what I am building?
+
+:mailbox_with_mail: [Subscribe to my list](https://localheinz.com/projects/), and I will occasionally send you an email to let you know what I am working on.

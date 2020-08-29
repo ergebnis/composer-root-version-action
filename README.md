@@ -6,7 +6,7 @@
 [![Release](https://github.com/ergebnis/composer-root-version-action/workflows/Release/badge.svg?branch=main)](https://github.com/ergebnis/composer-root-version-action/actions)
 [![Renew](https://github.com/ergebnis/composer-root-version-action/workflows/Renew/badge.svg?branch=main)](https://github.com/ergebnis/composer-root-version-action/actions)
 
-Provides a GitHub Action that sets a `COMPOSER_ROOT_VERSION` environment variable from the value of the branch alias defined in `composer.json`.
+Provides a GitHub Action that sets a [`COMPOSER_ROOT_VERSION`](https://getcomposer.org/doc/03-cli.md#composer-root-version) environment variable from the value of the branch alias defined in `composer.json`.
 
 ## Usage
 

@@ -1,8 +1,8 @@
 # https://help.github.com/en/categories/automating-your-workflow-with-github-actions
 
-name: "Continuous Deployment"
+name: "Deploy"
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches:
       - "main"
@@ -10,8 +10,8 @@ on:
       - "**"
 
 jobs:
-  continuous-deployment:
-    name: "Continuous Deployment"
+  deploy:
+    name: "Deploy"
 
     runs-on: "ubuntu-latest"
 

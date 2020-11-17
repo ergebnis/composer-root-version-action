@@ -23,5 +23,5 @@ echo "Determined composer root version for branch \"${BRANCH}\" in \"${PATH_TO_C
 
 if [[ true = "${GITHUB_ACTIONS}" ]]; then
     echo "Setting COMPOSER_ROOT_VERSION environment variable to \"${COMPOSER_ROOT_VERSION}\"."
-    echo "::set-env name=COMPOSER_ROOT_VERSION::${COMPOSER_ROOT_VERSION}"
+    echo "COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION}" >> "${GITHUB_ENV}"
 fi

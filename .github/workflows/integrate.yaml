@@ -167,7 +167,7 @@ jobs:
 
     steps:
       - name: "Request review from @${{ env.ERGEBNIS_BOT_NAME }}"
-        uses: "actions/github-script@v3.1"
+        uses: "actions/github-script@v4.0.2"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
           script: |
@@ -186,7 +186,7 @@ jobs:
             })
 
       - name: "Assign @${{ env.ERGEBNIS_BOT_NAME }}"
-        uses: "actions/github-script@v3.1"
+        uses: "actions/github-script@v4.0.2"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
           script: |
@@ -205,7 +205,7 @@ jobs:
             })
 
       - name: "Approve pull request"
-        uses: "actions/github-script@v3.1"
+        uses: "actions/github-script@v4.0.2"
         if: "github.actor != '${{ env.ERGEBNIS_BOT_NAME }}'"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
@@ -221,7 +221,7 @@ jobs:
             })
 
       - name: "Merge pull request"
-        uses: "actions/github-script@v3.1"
+        uses: "actions/github-script@v4.0.2"
         with:
           github-token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
           script: |

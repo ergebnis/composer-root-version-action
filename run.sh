@@ -1,8 +1,3 @@
-#!/bin/sh -l
-
-BRANCH="${1:-main}"
-PATH="${2:-.}"
-
 PATH_TO_COMPOSER_JSON_FILE="${PATH}/composer.json"
 
 if [[ ! -f "${PATH_TO_COMPOSER_JSON_FILE}" ]]; then

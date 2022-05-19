@@ -1,20 +1,9 @@
-DOCKER_IMAGE:=ergebnis/composer-root-version-action
-
 .PHONY: it
-it: coding-standards docker ## Runs the coding-standards and docker targets
+it: coding-standards ## Runs the coding-standards target
 
 .PHONY: coding-standards
 coding-standards: ## Lints YAML files with yamllint
 	yamllint -c .yamllint.yaml --strict .
-
-.PHONY: docker
-docker: ## Builds, tags, and runs the Docker image
-	docker build --tag ${DOCKER_IMAGE} .
-	-docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest
-	-docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest foo .build/composer-json/present/no
-	docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest foo .build/composer-json/present/yes/branch-alias/defined/no
-	docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest foo .build/composer-json/present/yes/branch-alias/defined/yes
-	docker run --interactive --rm --tty --workdir=/app --volume ${PWD}:/app ${DOCKER_IMAGE}:latest bar .build/composer-json/present/yes/branch-alias/defined/yes
 
 .PHONY: help
 help: ## Displays this list of targets with descriptions

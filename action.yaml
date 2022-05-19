@@ -21,8 +21,12 @@ inputs:
 name: "composer-root-version-action"
 
 runs:
-  using: "docker"
-  image: "Dockerfile"
-  args:
-    - "${{ inputs.branch }}"
-    - "${{ inputs.path }}"
+  using: "composite"
+
+  steps:
+    - name: "Set COMPOSER_ROOT_VERSION environment variable from the value of the branch alias defined in composer.json"
+      env:
+        BRANCH: "${{ inputs.branch }}"
+        PATH: "${{ inputs.path }}"
+      run: "${{ github.action_path }}/run.sh"
+      shell: "bash"

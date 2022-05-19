@@ -4,7 +4,6 @@ We are using [GitHub Actions](https://github.com/features/actions) as a continuo
 
 For details, take a look at the following workflow configuration files:
 
-- [`workflows/deploy.yaml`](workflows/deploy.yaml)
 - [`workflows/integrate.yaml`](workflows/integrate.yaml)
 - [`workflows/prune.yaml`](workflows/prune.yaml)
 - [`workflows/release.yaml`](workflows/release.yaml)
@@ -30,16 +29,6 @@ $ make coding-standards
 
 to detect coding standard violations.
 
-## Docker Image
-
-Run
-
-```
-$ make docker
-```
-
-to build, tag, and run the Docker image locally.
-
 ## Extra lazy?
 
 Run
@@ -48,7 +37,7 @@ Run
 $ make
 ```
 
-to enforce coding standards, build, tag, and run the Docker image locally.
+to enforce coding standards.
 
 ## Help
 

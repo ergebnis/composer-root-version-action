@@ -8,6 +8,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 For a full diff see [`0.2.1...main`][0.2.1...main].
 
+### Changed
+
+* Turned action into a composite action and stopped using Docker ([#57]), by [@localheinz]
+
 ## [`0.2.1`][0.2.1]
 
 For a full diff see [`0.2.0...0.2.1`][0.2.0...0.2.1].
@@ -72,5 +76,6 @@ For a full diff see [`b25b879...0.1.0`][b25b879...0.1.0].
 [#9]: https://github.com/ergebnis/composer-root-version-action/pull/9
 [#11]: https://github.com/ergebnis/composer-root-version-action/pull/11
 [#26]: https://github.com/ergebnis/composer-root-version-action/pull/26
+[#57]: https://github.com/ergebnis/composer-root-version-action/pull/57
 
 [@localheinz]: https://github.com/localheinz

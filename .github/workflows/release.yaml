@@ -15,17 +15,19 @@ jobs:
 
     runs-on: "ubuntu-latest"
 
+    permissions:
+      contents: "write"
+
     steps:
       - name: "Determine tag"
         id: "determine-tag"
-        run: "echo \"::set-output name=tag::${GITHUB_REF#refs/tags/}\""
+        run: "echo \"tag=${GITHUB_REF#refs/tags/}\" >> $GITHUB_OUTPUT"
 
       - name: "Create release"
-        uses: "actions/create-release@0cb9c9b65d5d1901c1f53e5e66eaf4afd303e70e" # v1.1.4
-        env:
-          GITHUB_TOKEN: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
+        uses: "softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda" # v3.0.0
         with:
           draft: false
+          name: "${{ steps.determine-tag.outputs.tag }}"
           prerelease: false
-          release_name: "${{ steps.determine-tag.outputs.tag }}"
           tag_name: "${{ steps.determine-tag.outputs.tag }}"
+          token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"

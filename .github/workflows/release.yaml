@@ -19,15 +19,9 @@ jobs:
       contents: "write"
 
     steps:
-      - name: "Determine tag"
-        id: "determine-tag"
-        run: "echo \"tag=${GITHUB_REF#refs/tags/}\" >> $GITHUB_OUTPUT"
-
       - name: "Create release"
-        uses: "softprops/action-gh-release@b4309332981a82ec1c5618f44dd2e27cc8bfbfda" # v3.0.0
-        with:
-          draft: false
-          name: "${{ steps.determine-tag.outputs.tag }}"
-          prerelease: false
-          tag_name: "${{ steps.determine-tag.outputs.tag }}"
-          token: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
+        env:
+          GH_TOKEN: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
+          GH_REPO: "${{ github.repository }}"
+          RELEASE_TAG: "${{ github.ref_name }}"
+        run: "gh release create \"${RELEASE_TAG}\" --title \"${RELEASE_TAG}\" --notes \"\""

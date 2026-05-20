@@ -7,23 +7,21 @@ on: # yamllint disable-line rule:truthy
     tags:
       - "**"
 
+permissions: {}
+
 jobs:
   release:
     name: "Release"
 
     runs-on: "ubuntu-latest"
 
-    steps:
-      - name: "Determine tag"
-        id: "determine-tag"
-        run: "echo \"::set-output name=tag::${GITHUB_REF#refs/tags/}\""
+    permissions:
+      contents: "write"
 
+    steps:
       - name: "Create release"
-        uses: "actions/create-release@v1.1.4"
         env:
-          GITHUB_TOKEN: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
-        with:
-          draft: false
-          prerelease: false
-          release_name: "${{ steps.determine-tag.outputs.tag }}"
-          tag_name: "${{ steps.determine-tag.outputs.tag }}"
+          GH_TOKEN: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
+          GH_REPO: "${{ github.repository }}"
+          RELEASE_TAG: "${{ github.ref_name }}"
+        run: "gh release create \"${RELEASE_TAG}\" --title \"${RELEASE_TAG}\" --notes \"\""
